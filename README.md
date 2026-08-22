@@ -1,5 +1,14 @@
-# GUINHOUSE
-Cliente personalizado de ERPNext hecho en Angular 21
+<p align="center">
+  <img src="https://github.com/VictorGonzalezNahuat/GuinHouse/blob/main/public/assets/brand-logo.jpeg?raw=true" alt="GuinHouse Logo" width="180" style="border-radius: 12px;"/>
+</p>
+
+<h1 align="center">GUINHOUSE</h1>
+
+<p align="center">
+  <b>Cliente personalizado de ERPNext hecho en Angular 21</b>
+</p>
+
+---
 
  [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
