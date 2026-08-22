@@ -1,0 +1,85 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    
+    <!-- Columna Izquierda: Formulario -->
+    <div class="form-section">
+      <div class="brand-header">
+        <!-- Logo de la marca (PNG) -->
+        <img src="assets/brand-logo.png" alt="GuinHouse Logo" class="brand-logo">
+        <span class="brand-title">GuinHouse</span>
+      </div>
+
+      <div class="welcome-text">
+        <h2>Iniciar sesión</h2>
+        <p>Accede a tu Dashboard Empresarial</p>
+      </div>
+
+      <form (ngSubmit)="onLogin()" class="login-form">
+        <!-- Campo Usuario -->
+        <div class="form-group">
+          <label for="usr">Usuario</label>
+          <div class="input-container">
+            <!-- Icono PNG para el input de usuario -->
+            <img src="assets/icons/user-icon.png" alt="Usuario" class="input-icon">
+            <input 
+              type="text" 
+              id="usr" 
+              [(ngModel)]="usr" 
+              name="usr" 
+              placeholder="Usuario" 
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="form-group">
+          <label for="pwd">Contraseña</label>
+          <div class="input-container">
+            <!-- Icono PNG para el input de contraseña -->
+            <img src="assets/icons/lock-icon.png" alt="Contraseña" class="input-icon">
+            <input 
+              type="password" 
+              id="pwd" 
+              [(ngModel)]="pwd" 
+              name="pwd" 
+              placeholder="Contraseña" 
+              required
+            >
+          </div>
+          <div class="forgot-pass-container">
+            <a href="#" class="forgot-pass">Olvidé mi contraseña</a>
+          </div>
+        </div>
+
+        <!-- Mensaje de error de Angular si falla -->
+        @if (errorMessage) {
+          <div class="error-banner">{{ errorMessage }}</div>
+        }
+
+        <!-- Botón de Submit -->
+        <button type="submit" class="btn-submit">INGRESAR</button>
+      </form>
+
+    </div>
+
+    <!-- Columna Derecha: Hero Dark -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <!-- Imagen principal/Ilustración PNG -->
+        <div class="hero-image-container">
+          <img src="assets/hero-illustration.png" alt="TU LOGO AQUÍ" class="hero-image">
+        </div>
+
+        <h1 class="hero-title">Optimiza tu Negocio<br>con GuinHouse</h1>
+        <p class="hero-subtitle">Dashboard Empresarial</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer general -->
+  <footer class="login-footer">
+    <p>GuinHouse © 2026 • Privacidad • Términos</p>
+  </footer>
+</div>
