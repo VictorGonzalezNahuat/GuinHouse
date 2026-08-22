@@ -12,6 +12,8 @@
 
  [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
+## 📢 Revisa el [Flujo de trabajo](CONTRIBUTING.md) para contribuir en el proyecto
+
 ## Requisitos de software
 Asegúrate de tener instalados los siguientes componentes antes de clonar el proyecto:
 
@@ -45,32 +47,39 @@ Asegúrate de tener instalados los siguientes componentes antes de clonar el pro
 3. **Levantar el servidor de desarrollo utilizando la CLI local del proyecto:**
     ```bash
     npx ng serve
-4. **Accede a http://localhost:4200/ desde el navegador**
+4. **Accede a http://localhost:4200/app/home desde el navegador**
 
 
 ## Modificacion del Frontend
 El proyecto se estructura en un arbol de componentes alojados dentro de /src/app/components
 ```text
 src/app/components/
-├── login/                  
+├── login/                    # Módulo independiente de autenticación
 │   ├── login.ts
 │   ├── login.html
 │   └── login.css
 │
-└── app/                    
+├── shared/                   # Carpeta para componentes universales 
+│   └── shared.md
+│
+└── app/                      
     ├── app.ts
     ├── app.html
     ├── app.css
-    │      
-    ├── home/           
-    │   ├── home.ts
-    │   ├── home.html
-    │   └── home.css
+    ├── app.spec.ts
     │
-    └── inventario/    
-        ├── inventario.ts
-        ├── inventario.html
-        └── inventario.css
+    └── components/           # Componentes anidados
+        ├── clientes/         
+        ├── compras/          
+        ├── configuracion/    
+        ├── contabilidad/     
+        ├── home/             
+        ├── inventario/       
+        ├── proveedores/      
+        ├── reportes/         
+        ├── sucursales/       
+        ├── usuarios/         
+        └── ventas/           
 ````
 ### Estructura de un componente
 
@@ -109,7 +118,7 @@ Para crear un componente usa el comando `ng generate component` (o su alias `ng 
 npx ng g c components/nombre-del-componente
 
 # Ejemplo para un componente anidado
-npx ng g c components/app/nombre-del-subcomponente
+npx ng g c components/componente-padre/components/nombre-del-subcomponente
 ```
 
 ### 2. Reglas de Ubicación
@@ -119,11 +128,13 @@ Si el componente representa una pantalla independiente que no comparte la interf
 
 #### Componentes Anidados (Vistas de la App):
 
-Si la vista se despliega dentro del layout principal del sistema (es decir, usa la barra lateral, el menú superior o el contenedor de app), debe anidarse dentro de **src/app/components/{componente}/** (remplazar {componente} por el real).
+Si la vista se despliega dentro del layout principal del sistema (es decir, usa la barra lateral, el menú superior o el contenedor de app), debe anidarse dentro de **src/app/components/nombre-componente-padre/components/nombre-subcomponente** (remplaza por los nombres reales).
 
 #### Componentes Universales / Reutilizables:
 
 Si estás diseñando un elemento que se utilizará en múltiples pantallas (como un botón personalizado, una tarjeta de KPI, una tabla reutilizable o un modal), colócalo dentro de la carpeta global de compartidos: **src/app/components/shared/**
 
-### IMPORTANTE: Revisa siempre la carpeta en la que te encuentras posicionado en la terminal antes de ejecutar ng g c para evitar crear carpetas huérfanas fuera de la estructura oficial.
+### ⚠️ IMPORTANTE: Revisa siempre la carpeta en la que te encuentras posicionado en la terminal antes de ejecutar ng g c para evitar crear carpetas huérfanas fuera de la estructura oficial.
+
+### Para mas información del framework consulta la [Documentacion de Angular21](https://angular.dev/events/v21)
 
