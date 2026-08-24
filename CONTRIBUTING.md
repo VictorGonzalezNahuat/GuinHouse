@@ -6,7 +6,7 @@
 git checkout -b feature/mi-nueva-funcionalidad
 ```
 
-2. **Haz tus cambios** y asegúrate de:
+2. **Haz tus cambios** y asegúrate de :
 
    - Seguir el estilo de código existente
    - Agregar comentarios cuando sea necesario
