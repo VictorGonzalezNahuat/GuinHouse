@@ -1,6 +1,5 @@
 name: GuinHouse CI Pipeline
 
-# Se ejecuta cuando se abre o actualiza un PR hacia main
 on:
   pull_request:
     branches: [ main ]
@@ -11,29 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Descargar el código del repositorio
       - name: Checkout del código
         uses: actions/checkout@v4
 
-      # 2. Configurar el entorno de Node.js
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # 3. Instalar dependencias exactas
       - name: Instalar dependencias
         run: npm ci
 
-      # 4. Validar el formato y reglas de código con Linter
       - name: Correr Linter
         run: npm run lint --if-present
 
-      # 5. Executar pruebas unitarias en modo Headless (sin abrir interfaz gráfica)
       - name: Ejecutar Tests Unitarios
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: npm test -- --watch=false
 
-      # 6. Compilar la aplicación para producción
       - name: Verificar Compilación de Angular
         run: npm run build -- --configuration=production
